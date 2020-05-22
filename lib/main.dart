@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,7 @@ class MyHomePage extends StatelessWidget {
         amount: 5000,
         date: DateTime.now(),
         reason: 'Pay Text')
-    
+
   ];
 
   @override
@@ -56,9 +57,9 @@ class MyHomePage extends StatelessWidget {
                   subtitle: Text(tx.amount.toString() +
                       '''
                 ''' +
-                      tx.date.toIso8601String() +
+                      new DateFormat.yMMMd().format(tx.date) +
                       '''
-                   ''' +
+                   \n''' +
                       tx.reason))
             ]));
           }).toList()),
