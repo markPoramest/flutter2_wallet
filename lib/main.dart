@@ -57,7 +57,7 @@ class MyHomePage extends StatelessWidget {
                   subtitle: Text(tx.amount.toString() +
                       '''
                 ''' +
-                      new DateFormat.yMMMd().format(tx.date) +
+                      new DateFormat('dd/MM/yyyy').format(tx.date) +
                       '''
                    \n''' +
                       tx.reason))
